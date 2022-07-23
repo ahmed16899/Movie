@@ -1,0 +1,34 @@
+<div  class="">
+    <div class=" d-flex justify-content-evenly  mt-5 pt-3">
+        <div class="content ">
+            <img class="cursor w-75 br" [src]="img+__movie?.poster_path">
+        </div>
+        <div class="text-center w-25 d-flex justify-content-evenly align-items-center flex-column">
+            <h3 class="h2 fw-bolder ">{{__movie.original_title}}</h3>
+            <h3 class="h3 fw-bolder ">{{__movie?.belongs_to_collection?.name}}</h3>
+            <a [href]="__movie.homepage" target="_blank">{{__movie?.homepage}}</a>
+            <h3 class="h6 fw-bolder ">{{__movie?.overview}}</h3>
+            <h3 class="h6 fw-bolder ">{{__movie?.release_date}}</h3>
+            <h3 class="h6 fw-bolder ">{{__movie?.tagline}}</h3>
+        </div>
+    </div>
+</div>
+ <div class="container py-5">
+    <h2>Recommendations</h2>
+    <!-- <div class="row py-5">
+        <div *ngFor="let movies of movieRecommendations" class="col-md-2">
+            <div (click)="changeMovieID(movies)"  class=" mx-2 text-center wordColorHover" [routerLink]="['/moviedetails',movies.id,type]">
+                <div style="border-radius: 30px;" class=" overflow-hidden position-relative">
+                    <img class=" w-100 imgHover" [src]="img+movies.poster_path">
+                </div>
+                <h3 class="h6 fw-bolder my-4 text-center" *ngIf="type=='movie'">{{movies.original_title}}</h3>
+                <h3 class="h6 fw-bolder my-4 text-center" *ngIf="type=='tv'">{{movies.name}}</h3>
+            </div>         
+        </div>
+        <button *ngIf="pageCounter==allPages" (click)="viewMore()" class="btn btn-outline-success left my-4"> View More . . . .</button>
+    </div> --> 
+    <app-moviescollection [type]="type"  [movies]="movieRecommendations"></app-moviescollection>
+    <button *ngIf="pageCounter!=allPages" (click)="viewMore()" class="btn btn-outline-success left my-4"> View More . . . .</button>
+
+
+</div> 

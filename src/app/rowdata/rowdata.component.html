@@ -1,0 +1,43 @@
+<!-- <div class="row py-5">
+    <div class="col-md-4 d-flex flex-column justify-content-evenly">
+        <div class="w-25 brdr"></div>
+        <h2 *ngIf="type=='movie'">Trending Movies</h2>
+        <h2 *ngIf="type=='tv'">Trending Series</h2>
+        <h2 *ngIf="type=='person'">Trending Person</h2>
+        <h2 class="">To Watch right now</h2>
+        <h6 class="text-muted" *ngIf="type=='movie'">most watched movies by days</h6>
+        <h6 class="text-muted " *ngIf="type=='tv'">most watched series by days</h6>
+        <h6 class="text-muted " *ngIf="type=='person'">most viewed person by days</h6>
+        <div class="w-75 brdr"></div>
+    </div>
+    <div *ngFor="let movie of typeData" class="col-md-2">
+        <div class="content position-relative" [routerLink]="['/moviedetails',movie.id,'movie']">
+            <img *ngIf="type=='movie' || type=='tv'" class="w-100 cursor" [src]="img+movie.poster_path">
+            <h3 class="h6 fw-bolder my-4" *ngIf="type=='movie'">{{movie.original_title}}</h3>
+            <h3 class="h6 fw-bolder my-4"  *ngIf="type=='tv'">{{movie.name}}</h3>
+            <img *ngIf="type=='person'" class="w-100" [src]="img+movie.profile_path">
+            <h3 *ngIf="type=='person'" class="h6 fw-bolder my-4">{{movie.name}}</h3>
+            <div *ngIf="type=='movie' || type=='tv'" class="position-absolute top-0 end-0 bgblight p-2">{{movie.vote_average}}</div>
+        </div>
+    </div>
+</div> -->
+<div class="row py-2">
+<owl-carousel-o [options]="customOptions" style="font-size: 1.5rem;">
+  <ng-container  *ngFor="let movie of arrayData">
+    <ng-template  carouselSlide [id]="movie.id" >
+        <div   class=" mx-2 text-center wordColorHover" [routerLink]="['/moviedetails',movie.id,type]">
+            <div style="border-radius: 30px;" class=" overflow-hidden position-relative">
+                <!-- <div class="w-100 h-100 position-absolute hover2 position-relative">
+                    <i class="fa-brands fa-youtube iconCustom position-absolute"></i>
+                </div> -->
+                <img  class=" w-100 imgHover"  [src]="img+movie.poster_path">
+            </div>
+            <h3 class="h6 fw-bolder my-4 text-center" *ngIf="type=='movie'">{{movie.original_title}}</h3>
+            <h3 class="h6 fw-bolder my-4 text-center"  *ngIf="type=='tv'">{{movie.name}}</h3>
+        </div>
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
+
+</div>

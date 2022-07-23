@@ -1,0 +1,12 @@
+<div class="w-25 d-flex mx-auto">
+    <input #name [(ngModel)]="movName" class="form-control" placeholder="Search" />
+    <button  class="btn bgblight" [routerLink]="['/search',movName,type]">
+        <i class="fas fa-search"></i>
+    </button>
+</div>
+<div class="container py-5">
+    <h2>Recommendations</h2>
+    <app-moviescollection [type]="type" [movies]="searchData"></app-moviescollection>
+    <button *ngIf="pageCounter!=allPages" (click)="viewMore()" class="btn btn-outline-success left my-4"> View More . .
+        . .</button>
+</div>

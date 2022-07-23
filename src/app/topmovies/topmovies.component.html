@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row py-5">
+        <div class="col-md-7 d-flex flex-column justify-content-evenly">
+            <div class="w-25 brdr"></div>
+            <h2 class="">Top Rated Movies</h2>
+            <h2 class="">To Watch right now</h2>
+            <h6 class="text-muted ">most watched movies by days</h6>
+            <div class="w-75 brdr"></div>
+        </div>
+        <app-moviescollection [averageApprear]="'0'" [type]="type" [movies]="topMoviesData"></app-moviescollection>
+        <div class="w-50 mx-auto py-5 d-flex justify-content-evenly">
+            <button [disabled]="pageNumber==1"  (click)="changePage(false)" class="rounded-pill p-2 px-3 bgblight text-white">previous</button>
+            <p class="mt-2"> page {{pageNumber}}</p>
+            <button [disabled]="pageNumber==496"  (click)="changePage(true)" class="rounded-pill p-2 px-4 bgblight text-white">next    </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body
+{
+    background-color: #131722;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.bgblight
+{
+    background-color: #24baef;
+}
+.bgblight:disabled
+{
+    background-color: #c0e5f3;
+}
+.brdr
+{
+    background-color:#a8a8a83d ;
+    height: 1px;
+}
+.top90
+{
+    top: 87%;
+}
+.cursor
+{
+    cursor: pointer;
+}
+.owl-prev
+{
+    color: #131722 !important;
+    position: absolute !important ;
+    left: -5%;
+    top: 40%;
+    background-color: white !important;
+
+}
+.owl-next
+{
+    color: #131722 !important;
+    position: absolute !important ;
+    right: -5%;
+    top: 40%;
+    background-color: white !important;
+
+
+}
+
+

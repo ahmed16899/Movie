@@ -1,0 +1,14 @@
+<div class="row py-5">
+    <div *ngFor="let movie of movies" class="col-md-2">
+        <div (click)="changeMovieID(movie)"  class=" mx-2 text-center wordColorHover position-relative" [routerLink]="['/moviedetails',movie.id,type]">
+            <div style="border-radius: 30px;" class=" overflow-hidden position-relative">
+                <img class=" w-100 imgHover" [src]="img+movie.poster_path">
+            </div>
+            <h3 class="h6 fw-bolder my-4 text-center">{{movie.original_title}}</h3>
+            <h3 class="h6 fw-bolder my-4 text-center" >{{movie.name}}</h3>
+            <div *ngIf="averageApprear=='0'" class="position-absolute top-0 end-0 bgblight p-2 bd">{{movie.vote_average}}</div>
+
+        </div>         
+    </div>
+    <!-- <button *ngIf="pageCounter==allPages" (click)="viewMore()" class="btn btn-outline-success left my-4"> View More . . . .</button> -->
+</div>

@@ -1,0 +1,31 @@
+<div class="w-25 d-flex mx-auto" >
+    <input #name [(ngModel)]="movName" class="form-control" placeholder="Search" />
+    <button  class="btn bgblight" [routerLink]="['/search',movName,'movie']">
+        <i class="fas fa-search"></i>
+    </button>
+</div>
+
+<div class="container">
+    <h2>Trending Movies</h2>
+    <app-rowdata [arrayData]="trendingMovie" [type]="'movie'"></app-rowdata>
+    <button [routerLink]="['/alltrending','movie']" class="btn btn-outline-success left mb-5 "> View More . . .
+        .</button>
+</div>
+<div class="w-25 d-flex mx-auto">
+    <input #name1 [(ngModel)]="movName"  class="form-control" placeholder="Search" />
+    <button class="btn bgblight" [routerLink]="['/search',movName,'tv']">
+        <i class="fas fa-search"></i>
+    </button>
+</div>
+
+<div class="container">
+    <h2>Trending TV</h2>
+    <app-rowdata [arrayData]="trendingTV" [type]="'tv'"></app-rowdata>
+    <button [routerLink]="['/alltrending','tv']" class="btn btn-outline-success left mb-5"> View More . . . .</button>
+    <!-- <app-rowdata [type]="'person'"></app-rowdata> -->
+</div>
+
+
+
+<div  *ngIf="false else a" class="mx-auto text-center">aaaa</div>
+<ng-template #a>asdasd</ng-template>

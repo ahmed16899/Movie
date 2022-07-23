@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="py-4">All trending {{type}}</h2>
+
+    <!-- <div class="row">
+        <div class="col-2" *ngFor="let movie of allTrending">
+            <div class=" mx-2 text-center wordColorHover" [routerLink]="['/moviedetails',movie.id,'movie']">
+                <div style="border-radius: 30px;" class=" overflow-hidden position-relative">
+                    <img class=" w-100 imgHover" [src]="img+movie.poster_path">
+                </div>
+                <h3 class="h6 fw-bolder my-4 text-center" *ngIf="type=='movie'">{{movie.original_title}}</h3>
+                <h3 class="h6 fw-bolder my-4 text-center" *ngIf="type=='tv'">{{movie.name}}</h3>
+            </div>
+        </div>
+      
+    </div> -->
+    <app-moviescollection [type]="type"  [movies]="allTrending"></app-moviescollection>
+    <button *ngIf="pageCounter!=allPages" (click)="viewMore()" class="btn btn-outline-success left my-4"> View More . . . .</button>
+</div>
